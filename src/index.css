@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.button1{
+  text-decoration: none;
+  font-size: 14px;
+  color: #f1f1f1;
+  background: linear-gradient(#6f4900,#02023c);
+  padding: 5px 15px;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  box-shadow: inset 2px 2px 2px rgba(255,255,255,0.4),
+  inset -5px -10px 10px #2e5106;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.button2{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d1d8d5;
+  border: 2px solid rgb(2, 33, 90);
+  border-radius: 0.5em;
+  padding: 5px 15px;
+  margin: 0px 5px;
 }
