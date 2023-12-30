@@ -1,55 +1,51 @@
-import React,{useEffect} from 'react'
-import './Menu.css';
-import Log from "../components/image/Log.png"
+import React, { useEffect } from "react";
+import "./Menu.css";
+import Log from "../components/image/Log.png";
 
-import { 
+import {
   FaDelicious,
   FaShoppingCart,
-  FaWallet,FaChartLine,
+  FaWallet,
+  FaChartLine,
   FaRegClock,
   FaCog,
-  FaSignOutAlt
+  FaSignOutAlt,
 } from "react-icons/fa";
 
 function Menu() {
-  useEffect(()=>{
+  useEffect(() => {
+    const mainMenuLi = document
+      .getElementById("mainMenu")
+      .querySelectorAll("li");
 
-  const mainMenuLi=document
-  .getElementById("mainMenu")
-  .querySelectorAll("li");
+    function changeActive() {
+      mainMenuLi.forEach((n) => n.classList.remove("active"));
+      this.classList.add("active");
+    }
 
-  function changeActive(){
-    mainMenuLi.forEach((n)=>n.classList.remove("active"));
-    this.classList.add("active");
-  }
-
- mainMenuLi.forEach(n =>
-  n.addEventListener("click",changeActive));
-  }, 
-  []);
+    mainMenuLi.forEach((n) => n.addEventListener("click", changeActive));
+  }, []);
 
   return (
-   <menu className='menu'> 
-    <img src={Log} />
-   <ul id='mainMenu'>
-    <Icon icon={<FaDelicious/>}/>
-    <Icon icon={<FaShoppingCart/>}/>
-    <Icon icon={<FaWallet/>}/>
-    <Icon icon={<FaChartLine/>}/>
-    <Icon icon={<FaRegClock/>}/>
-    
-   </ul>
-<ul className='lastMenu'>
-<Icon icon={<FaCog/>}/>
-<Icon icon={<FaSignOutAlt/>}/>
-</ul>
-  </menu>
-  )
-  
+    <menu className='menu'>
+      <img src={Log} />
+      <ul id='mainMenu'>
+        <Icon icon={<FaDelicious />} />
+        <Icon icon={<FaShoppingCart />} />
+        <Icon icon={<FaWallet />} />
+        <Icon icon={<FaChartLine />} />
+        <Icon icon={<FaRegClock />} />
+      </ul>
+      <ul className='lastMenu'>
+        <Icon icon={<FaCog />} />
+        <Icon icon={<FaSignOutAlt />} />
+      </ul>
+    </menu>
+  );
 }
-const Icon=({icon})=>(
+const Icon = ({ icon }) => (
   <li>
-    <a href='#'>{icon} </a>
+    <a href='.'>{icon} </a>
   </li>
 );
 
